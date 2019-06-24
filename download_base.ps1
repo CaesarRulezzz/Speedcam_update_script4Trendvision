@@ -1,4 +1,6 @@
 $type = $args[0]
+$7zip_path = "C:\Program Files\Easy 7-Zip\7z"
+$drive_label = "REGIST"
 
 if ($type -eq "trendvision")
 {
@@ -17,8 +19,7 @@ else {
     Exit-PSSession
 }
 
-$7zip_path = "C:\Program Files\Easy 7-Zip\7z"
-$scriptDriveLetter = (Get-Volume -FileSystemLabel REGIST).DriveLetter
+$scriptDriveLetter = (Get-Volume -FileSystemLabel $drive_label).DriveLetter
 $outputPath = "${scriptDriveLetter}:\"
 if ($scriptDriveLetter.length -gt 0)
 {
