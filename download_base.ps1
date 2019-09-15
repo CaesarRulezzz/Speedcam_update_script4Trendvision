@@ -11,7 +11,7 @@ if ($type -eq "trendvision")
 elseif ($type -eq "showme")
 {
     # showme
-    $download_link = "https://speedcam.online/rd.online/shome/combo7new/combo_database.zip"
+    $download_link = "https://speedcam.online/rd.online/shome/shome7new/combo_database.zip"
     $filename = "Full_Base.zip"
 }
 else {
