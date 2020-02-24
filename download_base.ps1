@@ -24,8 +24,11 @@ $scriptDriveLetter = (Get-Volume -FileSystemLabel $drive_label).DriveLetter
 $outputPath = "${scriptDriveLetter}:\"
 if ($scriptDriveLetter.length -gt 0)
 {
+    Write-Host "Downloading from " $download_link " to " ${env:TEMP}"\"$filename
     Invoke-WebRequest $download_link -OutFile ${env:TEMP}"\"$filename
+    Write-Host "Extracting from " ${env:TEMP}"\"$filename " to " ${outputPath}
     & $7zip_path e ${env:TEMP}"\"$filename -o"${outputPath}" -y
+    Write-Host "Removing temp file"
     Remove-Item ${env:TEMP}\$filename -recurse
 }
 else {
